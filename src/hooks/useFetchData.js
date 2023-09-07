@@ -23,11 +23,10 @@ const useFetchData = ({ isClicked, searchTerm }) => {
           console.info("calling api");
           try {
             const response = await getData(debounceValue);
-            const slicedData = response.data.slice(0, 10);
-            setData(slicedData);
+            setData(response.data);
 
             const cacheData = {
-              data: slicedData,
+              data: response.data,
               cachedTime: currentTime,
             };
             localStorage.setItem(debounceValue, JSON.stringify(cacheData));
