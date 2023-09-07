@@ -38,7 +38,11 @@ const Home = () => {
         value={searchTerm}
       />
       {isClicked ? (
-        <SearchResult searchData={searchData} searchTerm={searchTerm} />
+        <SearchResult
+          searchData={searchData}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
       ) : null}
     </Container>
   );
