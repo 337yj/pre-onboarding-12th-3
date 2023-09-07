@@ -2,11 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
-function SearchBar() {
+function SearchBar({ onClick, onChange, value }) {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <FontAwesomeIcon icon={faMagnifyingGlass} />
-      <Input placeholder={"질환명을 입력해 주세요."} />
+      <Input
+        placeholder={"질환명을 입력해 주세요."}
+        onChange={onChange}
+        value={value}
+      />
       <Button>검색</Button>
     </Container>
   );
@@ -17,6 +21,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 60%;
   height: 60px;
 
   & > svg {
